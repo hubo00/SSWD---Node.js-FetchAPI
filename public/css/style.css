@@ -1,0 +1,95 @@
+body{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+   text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 20px;
+    text-align: center;
+    background-color: #403D39;
+}
+
+li{
+    padding: 9px 20px;
+    display: inline;
+    margin: 0 4em;
+    color: white;
+}
+
+li:hover{
+    background-color: white;
+    color: #403D39;
+}
+
+li:active{
+    color: white;
+}
+
+#coronalist{
+    padding: 9px 20px;
+    display: inline;
+    margin: 0 4em;
+    color: #403D39;
+    background-color: #F3BD19;
+}
+
+#coronalist:hover{
+    background-color: white;
+    color: #403D39;
+}
+
+#coronalist:active{
+    color: #F3BD19;
+}
+
+h4{
+    color: #403D39;
+    text-align: center;
+}
+
+.author{
+    color: #403D39;
+    padding: 0 0 0 10px;
+}
+
+.published{
+    color: #403D39;
+    padding: 0 0 0 10px;
+}
+
+.link{
+    text-decoration: none;
+}
+
+h1{
+    text-align: center;
+}
+
+.article{
+    width: 50em;
+    margin: 0 auto;
+    background-color: #ededed;
+    border-style: solid;
+    border-width: 0.5px;
+}
+
+.image{
+    width: 50em;
+}
+
+#country{
+    text-align: center;
+}
+
+.desc{
+    padding: 0 10px;
+    color: #403D39;
+}
+
+footer{
+    text-align: center;
+    background-color: #403D39;
+    color: white;
+}
