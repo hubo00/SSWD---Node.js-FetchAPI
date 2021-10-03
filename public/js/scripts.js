@@ -8,9 +8,6 @@ const reqInit = { method: 'GET', headers: headers, mode: 'cors', cache: 'default
 // Default news source
 const defaultCountry = 'ie';
 
-// moment.js import
-const moment = require('moment');
-
 // Asynchronous function to call API and get data 
 // NOTE: Paramater value is default ( in case it goes missing)
 async function getNewsData(country = defaultCountry) {
@@ -63,10 +60,23 @@ function retrieveCountry(){
     getNewsData(countryCode)
 }
 
-function formatTime(datetime) {
-    let formattedTime = moment(datetime).format();
-    console.log(formatTime);
-    return formattedTime;
+// Function to format time in (dd MMMM YYYY, hh:mm) format
+/*
+NOTE: I tried using moment.js, even emailed you about it (to no answer), I couldn't figure it out so I did
+it using just JavaScript.
+*/
+function formatTime(publishdate) {
+    let dateForFormat = new Date(publishdate).toLocaleDateString(
+        'en-gb',
+        {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            hour: 'numeric',
+            minute: 'numeric'
+        }
+    );
+    return dateForFormat;
 }
 
 // Function accepts an array of news articles
@@ -79,7 +89,7 @@ function displayData(articles) {
         return `<article class="article"><a href='${article.url}'>
                     <h4 class="title">${article.title}</h4>
                     <p class="author">${article.author}</p>
-                    <p class="published">${article.publishedAt}</p>
+                    <p class="published">${formatTime(article.publishedAt)}</p>
                     <img class="image" src=${article.urlToImage} alt='article image'>
                     <p class="desc">${article.description}</p>
                     </a>
